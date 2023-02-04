@@ -37,9 +37,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-	int have_sgx_psw();
+int have_sgx_psw();
 
-	void *get_sgx_ufunction(const char *name); /* Returns func pointer */
+void *get_sgx_ufunction(const char *name); /* Returns func pointer */
 
 #ifdef __cplusplus
 };

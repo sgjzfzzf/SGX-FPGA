@@ -29,4 +29,3 @@ int get_quote_size(sgx_status_t *status, uint32_t *quote_size);
 #endif
 
 #endif
-

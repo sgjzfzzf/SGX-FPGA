@@ -37,4 +37,3 @@ const char *hexstring(const void *src, size_t len);
 #endif
 
 #endif
-

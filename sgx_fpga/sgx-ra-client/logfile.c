@@ -15,39 +15,35 @@ in the License.
 
 */
 
-#include <stdio.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <sys/stat.h>
 #include "logfile.h"
 #include "hexutil.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 FILE *fplog = NULL;
 
-
-FILE *create_logfile(const char *filename)
-{
-	FILE *fp;
+FILE *create_logfile(const char *filename) {
+  FILE *fp;
 
 #ifdef _WIN32
-	if (fopen_s(&fp, filename, "w") != 0) {
-		fprintf(stderr, "fopen_s: ");
+  if (fopen_s(&fp, filename, "w") != 0) {
+    fprintf(stderr, "fopen_s: ");
 #else
-	if ( (fp= fopen(filename, "w")) == NULL ) {
-		fprintf(stderr, "fopen: ");
+  if ((fp = fopen(filename, "w")) == NULL) {
+    fprintf(stderr, "fopen: ");
 #endif
-		perror(filename);
-		exit(1);
-	}
+    perror(filename);
+    exit(1);
+  }
 
-	return fp;
+  return fp;
 }
 
-
-void close_logfile (FILE *fp)
-{
-	if ( fp ) {
-		fclose(fp);
-		fp = NULL;
-	}
+void close_logfile(FILE *fp) {
+  if (fp) {
+    fclose(fp);
+    fp = NULL;
+  }
 }
